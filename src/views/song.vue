@@ -163,9 +163,11 @@
 <script>
 // @ is an alias to /src
 
+import Vue from "vue";
 import "bootstrap";
 import Popper from "popper.js";
 var $ = require("jquery");
+Vue.use($);
 window.$ = $;
 Popper.Defaults.modifiers.computeStyle.gpuAcceleration = false;
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
