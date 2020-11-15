@@ -165,7 +165,8 @@
 
 import "bootstrap";
 import Popper from "popper.js";
-Popper.Defaults.modifiers.computeStyle.gpuAcceleration = false
+import $ from "jquery";
+Popper.Defaults.modifiers.computeStyle.gpuAcceleration = false;
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../../node_modules/bootstrap-jquery/dist/js/bootstrap.css";
 
