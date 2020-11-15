@@ -2,7 +2,7 @@ var express = require('express')
 
 app = express()
 
-app.get('/', function(req,res) {
+app.get('/i', function(req,res) {
   res.send('Heelo')
 })
 
