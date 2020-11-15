@@ -164,6 +164,8 @@
 // @ is an alias to /src
 
 import "bootstrap";
+import Popper from "popper.js";
+Popper.Defaults.modifiers.computeStyle.gpuAcceleration = false
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 export default {
