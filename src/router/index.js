@@ -1,14 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import song from '../views/song.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/:name',
-    name: 'Home',
-    component: Home
+    path: '/song/:name',
+    name: 'song',
+    component: song
   },
   {
     path: '/about',
@@ -21,7 +21,6 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'history',
   base: process.env.BASE_URL,
   routes
 })
