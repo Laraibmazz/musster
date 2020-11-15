@@ -62,7 +62,7 @@
           ></div>
         </div>
         <small class="ml-1 text-secondary">
-          4:39
+          4:39 {{ this.$route.params.name }}
         </small>
       </div>
       <br />
