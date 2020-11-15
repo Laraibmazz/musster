@@ -1,11 +1,13 @@
 var express = require('express')
-
 app = express()
 
-app.get('/', function(req,res) {
+app.get('/', function (req, res) {
   res.send('Heelo')
 })
 
+app.use('/test/:id', function (req, res) {
+  res.send(`{"test": ${req.params.id}}`)
+})
 app.use('/indx', express.static('dist'))
 app.use('/css', express.static('dist/css'))
 app.use('/js', express.static('dist/js'))
