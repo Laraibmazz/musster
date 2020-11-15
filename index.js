@@ -2,10 +2,13 @@ var express = require('express')
 
 app = express()
 
-app.get('/i', function(req,res) {
+app.get('/', function(req,res) {
   res.send('Heelo')
 })
 
 app.use('/indx', express.static('dist'))
+app.use('/css', express.static('dist/css'))
+app.use('/js', express.static('dist/js'))
+app.use('/img', express.static('dist/img'))
 
 app.listen(process.env.PORT || 3000)
