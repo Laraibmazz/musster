@@ -8,7 +8,9 @@ app.get('/', function (req, res) {
 app.use('/test/:id', function (req, res) {
   res.send(`{"test": ${req.params.id}}`)
 })
+
 app.use('/indx', express.static('dist'))
+app.use('/media', express.static('public/media'))
 app.use('/css', express.static('dist/css'))
 app.use('/js', express.static('dist/js'))
 app.use('/img', express.static('dist/img'))
