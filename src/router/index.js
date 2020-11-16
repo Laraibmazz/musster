@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import song from '../views/song.vue'
+import index from '../views/index.vue'
 
 Vue.use(VueRouter)
 
@@ -9,6 +10,11 @@ const routes = [
     path: '/song/:name',
     name: 'song',
     component: song
+  },
+  {
+    path: '/',
+    name: 'index',
+    component: index
   },
   {
     path: '/about',

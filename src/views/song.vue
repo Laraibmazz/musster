@@ -44,7 +44,7 @@
       <br />
       <div class="row align-items-center justify-content-center">
         <small class="mr-1 text-secondary">
-          1:30
+          {{ current | capitalize }}
         </small>
         <div
           class="progress d-flex justify-content-between"
@@ -62,7 +62,7 @@
           ></div>
         </div>
         <small class="ml-1 text-secondary">
-          4:39 {{ this.$route.params.name }}
+          {{ duration }}
         </small>
       </div>
       <br />
@@ -176,8 +176,10 @@ export default {
   name: "song",
   data() {
     return {
-      artist: "Bizzey",
-      name: "Traag"
+      artist: this.$route.params.name,
+      name: this.$route.params.name,
+      duration: "--:--",
+      current: "--:--"
     };
   },
   async mounted() {
@@ -191,6 +193,12 @@ export default {
   },
   methods: {
     src() {
+      document.getElementById("aud").onloadedmetadata = () => {
+        var a = parseInt(document.getElementById("aud").duration);
+        var dur = new Date(a * 1000).toISOString().substr(14, 5);
+        console.log();
+        this.duration = dur;
+      };
       document.getElementById("aud").src =
         "/media/" + this.$route.params.name + ".mp3";
     },
@@ -230,6 +238,9 @@ export default {
     },
     timeUpdate() {
       document.getElementById("aud").ontimeupdate = () => {
+        var a = parseInt(document.getElementById("aud").currentTime);
+        var cur = new Date(a * 1000).toISOString().substr(14, 5);
+        this.current = cur;
         document.getElementById("track").style.width =
           (document.getElementById("aud").currentTime /
             document.getElementById("aud").duration) *
