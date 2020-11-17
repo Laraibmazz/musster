@@ -7,14 +7,14 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/index',
+    name: 'index',
+    component: index
+  },
+  {
     path: '/song/:name',
     name: 'song',
     component: song
-  },
-  {
-    path: '/',
-    name: 'index',
-    component: index
   },
   {
     path: '/about',
