@@ -9,7 +9,8 @@ app.use('/test/:id', function (req, res) {
 })
 
 app.use('/upload', (req, res) => {
-  res.send(`${req.params}`)
+  a = req.params;
+  res.send(`<script>console.log('${a}');</script>`)
 });
 
 app.use('/', express.static('dist'))
