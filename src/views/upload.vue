@@ -1,40 +1,77 @@
 <template>
     <div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <form action="/test/1" method="get">
-            <h3 class="font-weight-bolder">
-                Upload file
-            </h3>
-            <div class="custom-file mt-4 w-50">
-                <input id="my-input" class="custom-file-input" type="file" name="">
-                <label for="my-input" class="custom-file-label">Select media</label>
-            </div>
-            <div class="row justify-content-center mt-4">
-                <div class="jumbotron pt-2 pb-4 w-50" onclick="document.getElementById('my-input').click();">
-                    <img src="https://cdn4.iconfinder.com/data/icons/files-20/32/332-01-512.png" alt="upload"
-                        width="200">
-                    <div class="custom-file mt-4">
-                        <input id="my-input" class="custom-file-input" type="file" name=""
-                            oninput="document.getElementById('my-input-label').innerHTML = this.files[0].name;console.log(this.files[0].name);">
-                        <label for="my-input" id="my-input-label" class="custom-file-label">Select media</label>
+        <div class="container mt-5">
+            <h4>
+                <strong>
+                    Upload a track
+                </strong>
+            </h4>
+            <br>
+            <div class="col-sm-8 col-md-4 col-md-12 col-lg-6 mr-auto ml-auto border p-4">
+                <form method="post" enctype="multipart/form-data" action="">
+                    <div class="form-group">
+                        <label>
+                            <strong>
+                                Title
+                            </strong>
+                        </label>
+                        <div class="custom-file">
+                            <input type="text" class="form-control form-control" id="colFormLabel"
+                                placeholder=" Enter Your Email Address ">
+                        </div>
                     </div>
-                </div>
+                    <div class="form-group">
+                        <label>
+                            <strong>
+                                Singer
+                            </strong>
+                        </label>
+                        <div class="custom-file">
+                            <input type="text" class="form-control form-control" id="colFormLabel"
+                                placeholder=" Enter Your Email Address ">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <strong>
+                                Upload file
+                            </strong>
+                        </label>
+                        <div class="custom-file">
+                            <input type="file" name="files[]" multiple class="custom-file-input form-control"
+                                id="customFile" accept="audio/*">
+                            <label class="custom-file-label" for="customFile">Select Song</label>
+                        </div>
+                    </div>
+                    <div class="form-group pt-1">
+                        <button type="submit" name="upload" value="upload" id="upload" class="btn btn-block btn-dark"><i
+                                class="fa fa-fw fa-upload"></i> Upload</button>
+                    </div>
+                </form>
             </div>
-            <button type="submit">
-                Submit
-            </button>
-        </form>
-
+        </div>
     </div>
 </template>
 
 <script>
+    import "../../node_modules/jquery/dist/jquery.min.js";
+    import $ from 'jquery'
+
     export default {
-        name: "upload"
+        name: "upload",
+        mounted() {
+            $(document).ready(function () {
+                $('input[type="file"]').on("change", function () {
+                    let filenames = [];
+                    let files = document.getElementById("customFile").files;
+                    filenames.push(files[0].name);
+                    $(this)
+                        .next(".custom-file-label")
+                        .html(filenames.join(","));
+                });
+            });
+
+
+        }
     }
 </script>

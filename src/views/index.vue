@@ -17,7 +17,7 @@
         </div>
         <nav class="nav">
           <li class="nav-item">
-            <a class="nav-link active" href="/#/sign">
+            <a class="nav-link active" href="/#/upload">
               <button
                 class="btn text-light pl-2 pr-2 pt-1 pb-1 font-weight-lighter bg-primary"
               >
@@ -47,13 +47,28 @@
           </li>
         </nav>
       </div>
-      <div></div>
+    </div>
+    <div class="container">
+      <div class="p-4">
+        <h1 class="slogan">
+          Music always and forever.
+        </h1>
+      </div>
+      <div class=""></div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "index",
-}
+  name: "index"
+};
 </script>
+
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@900&display=swap");
+.slogan {
+  font-family: "Sansita Swashed", cursive;
+  font-size: 55px;
+}
+</style>
