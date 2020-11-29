@@ -65,10 +65,17 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 @import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@900&display=swap");
 .slogan {
   font-family: "Sansita Swashed", cursive;
   font-size: 55px;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>

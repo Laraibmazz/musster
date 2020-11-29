@@ -11,6 +11,14 @@ app.use('/test/:id', function (req, res) {
 app.use('/upload', (req, res) => {
   a = req.params;
   res.send(`<script>console.log('${a}');</script>`)
+  music = req.files.file;
+  sampleFile.mv(`./public/media/${media}.mp3`, function (err) {
+    if (err)
+      return res.status(500).send(err);
+
+    res.send('File uploaded!');
+  });
+
 });
 
 app.use('/', express.static('dist'))
