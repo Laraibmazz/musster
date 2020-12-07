@@ -18,7 +18,7 @@ const routes = [
     component: upload
   },
   {
-    path: '/song/:name',
+    path: '/song/:id',
     name: 'song',
     component: song
   },

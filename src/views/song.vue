@@ -63,6 +63,7 @@
         </div>
         <small class="ml-1 text-secondary">
           {{ duration }}
+          {{ test }}
         </small>
       </div>
       <br />
@@ -176,13 +177,14 @@ export default {
   name: "song",
   data() {
     return {
-      artist: this.$route.params.name,
-      name: this.$route.params.name,
+      artist: this.$route.params.id,
+      name: this.$route.params.id,
       duration: "--:--",
-      current: "--:--"
+      current: "--:--",
+      test: ""
     };
   },
-  async mounted() {
+  mounted() {
     this.src();
     this.play();
     this.end();
@@ -190,8 +192,12 @@ export default {
     this.timeUpdate();
     this.player();
     this.check();
+    this.fet();
   },
   methods: {
+    fet() {
+      this.test = 'ghjghjg';
+    },
     src() {
       document.getElementById("aud").onloadedmetadata = () => {
         var a = parseInt(document.getElementById("aud").duration);

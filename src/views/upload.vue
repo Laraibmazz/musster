@@ -13,7 +13,7 @@
         <form
           method="post"
           enctype="multipart/form-data"
-          action="https://gentle-crag-07652.herokuapp.com/upload"
+          action="http://localhost:3000/upload"
         >
           <div class="form-group">
             <label>
@@ -26,7 +26,9 @@
                 type="text"
                 class="form-control form-control"
                 id="colFormLabel"
-                placeholder=" Enter Your Email Address "
+                placeholder=" Title "
+                name="title"
+                required
               />
             </div>
           </div>
@@ -41,7 +43,9 @@
                 type="text"
                 class="form-control form-control"
                 id="colFormLabel"
-                placeholder=" Enter Your Email Address "
+                placeholder=" Singer "
+                name="Singer"
+                required
               />
             </div>
           </div>
@@ -59,6 +63,7 @@
                 class="custom-file-input form-control"
                 id="customFile"
                 accept="audio/*"
+                required
               />
               <label class="custom-file-label" for="customFile"
                 >Select Song</label
